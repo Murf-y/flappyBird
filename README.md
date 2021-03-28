@@ -1,5 +1,5 @@
 ### FlappyBird
 A  game made with js [play it here](https://murf-y.github.io/flappyBird/)
 
-#Note 
+# Note 
 it is for mobile only (currently)
