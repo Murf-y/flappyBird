@@ -42,6 +42,7 @@ if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
 var highscore = localStorage.getItem("highscore");
 if (!highscore) {
     localStorage.setItem("highscore", 0);
+    highscore=0;
 }
 highscoreText.innerText = "HighScore: " + highscore.toString();
 
