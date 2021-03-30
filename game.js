@@ -2,6 +2,7 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var playBtn = document.getElementById("play-btn");
 var scoreText = document.getElementById("score");
+var highscoreText = document.getElementById("highscore");
 var started = false;
 var lost = false;
 
@@ -10,11 +11,11 @@ var bg = new Image();
 var pipeNorth = new Image();
 var pipeSouth = new Image();
 
-
-bird.src = "images/bird1.png";
-bg.src = "images/bg1.png";
-pipeNorth.src = "images/pipeNorth1.png";
-pipeSouth.src = "images/pipeSouth1.png";
+// mobile images
+bird.src = "images/birds.png";
+bg.src = "images/bg_mobile.png";
+pipeNorth.src = "images/pipeNorth_mobile.png";
+pipeSouth.src = "images/pipeSouth_mobile.png";
 
 
 var gapBetweenPipes = 70;
@@ -26,8 +27,27 @@ var Bird = {
     y: 150
 }
 
-var gravity = 2;
-var jumpForce = 15;
+if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+    // on desktop
+    canvas.width = 500;
+    canvas.height = 375;
+    bird.src = "images/bird_desktop.png";
+    bg.src = "images/bg_desktop.png";
+    pipeNorth.src = "images/pipeNorth_desktop.png";
+    pipeSouth.src = "images/pipeSouth_desktop.png";
+    gapBetweenPipes = 95;
+
+}
+
+var highscore = localStorage.getItem("highscore");
+if (!highscore) {
+    localStorage.setItem("highscore", 0);
+}
+highscoreText.innerText = "HighScore: " + highscore.toString();
+
+
+var gravity = 1.9;
+var jumpForce = 16;
 var score = 0;
 
 document.addEventListener('click', Jump);
@@ -83,8 +103,14 @@ function Update() {
         if (pipe[i].x == 15) {
             score++;
             scoreText.innerText = "Score: " + score.toString();
+            if (score > highscore) {
+                highscore = score;
+                localStorage.setItem("highscore", highscore);
+            }
+
         }
     }
+    highscoreText.innerText = "HighScore: " + highscore.toString();
     ctx.drawImage(bird, Bird.x, Bird.y);
     if (lost) { return }
     Bird.y += gravity;

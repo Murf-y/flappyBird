@@ -2,6 +2,7 @@
   --text-primary-color: rgb(233, 217, 0);
   --text-secondary-color: rgb(57, 107, 15);
   --canvas-color: rgb(29, 153, 202);
+  --canvas-dark-color: rgb(25, 106, 138);
   --background-color: rgb(30, 30, 30);
 }
 
@@ -18,27 +19,29 @@ body {
 }
 
 #title:hover {
-  -webkit-animation: lerp 1s forwards;
-          animation: lerp 1s forwards;
-}
-
-@-webkit-keyframes lerp {
-  100% {
-    color: var(--text-secondary-color);
-  }
-}
-
-@keyframes lerp {
-  100% {
-    color: var(--text-secondary-color);
-  }
+  color: var(--text-secondary-color);
 }
 
 #score {
+  font-size: 40px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  color: var(--canvas-color);
+}
+
+#score:hover {
+  color: var(--text-secondary-color);
+}
+
+#highscore {
   font-size: 30px;
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
   color: var(--canvas-color);
+}
+
+#highscore:hover {
+  color: var(--text-secondary-color);
 }
 
 #footer {
@@ -49,14 +52,7 @@ body {
 }
 
 #footer:hover {
-  -webkit-animation: lerp 1s forwards;
-          animation: lerp 1s forwards;
-}
-
-@keyframes lerp {
-  100% {
-    color: --text-secondary-color;
-  }
+  color: var(--text-secondary-color);
 }
 
 .button {
@@ -70,14 +66,7 @@ body {
 }
 
 .button:hover {
-  -webkit-animation: lerp 1s forwards;
-          animation: lerp 1s forwards;
-}
-
-@keyframes lerp {
-  100% {
-    color: var(--text-secondary-color);
-  }
+  background: var(--canvas-dark-color);
 }
 
 #main > div {
@@ -98,8 +87,6 @@ body {
 
 #canvas {
   background-color: var(--canvas-color);
-  width: 100;
-  height: 100;
-  border: 5px solid black;
+  border: 5px double black;
 }
 /*# sourceMappingURL=styles.css.map */
