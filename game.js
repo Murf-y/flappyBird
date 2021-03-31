@@ -12,7 +12,7 @@ var pipeNorth = new Image();
 var pipeSouth = new Image();
 
 // mobile images
-bird.src = "images/birds.png";
+bird.src = "images/bird_mobile.png";
 bg.src = "images/bg_mobile.png";
 pipeNorth.src = "images/pipeNorth_mobile.png";
 pipeSouth.src = "images/pipeSouth_mobile.png";
