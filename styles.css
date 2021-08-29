@@ -1,6 +1,6 @@
 :root {
   --text-primary-color: rgb(233, 217, 0);
-  --text-secondary-color: rgb(57, 107, 15);
+  --text-secondary-color: rgb(82, 153, 24);
   --canvas-color: rgb(29, 153, 202);
   --canvas-dark-color: rgb(25, 106, 138);
   --background-color: rgb(30, 30, 30);
@@ -14,12 +14,26 @@ body {
 #title {
   font-size: 75px;
   text-align: center;
+  z-index: 1;
   font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
   color: var(--text-primary-color);
 }
 
 #title:hover {
   color: var(--text-secondary-color);
+}
+
+#subtitle {
+  font-size: 25px;
+  z-index: 10;
+  -webkit-transform: translate(50%, -400px) rotate(325deg);
+          transform: translate(50%, -400px) rotate(325deg);
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  color: var(--text-secondary-color);
+}
+
+#subtitle:hover {
+  color: var(--text-primary-color);
 }
 
 #score {

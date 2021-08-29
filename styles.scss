@@ -14,12 +14,26 @@ body {
 #title {
     font-size: 75px;
     text-align: center;
+    z-index: 1;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     color: var(--text-primary-color)
 }
 
 #title:hover {
     color: var(--text-secondary-color);
+}
+
+#subtitle{
+    font-size: 25px;
+    z-index: 10;
+    transform: translate(50%, -400px) rotate(325deg);
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    color: var(--text-secondary-color)
+}
+
+#subtitle:hover {
+    color: var(--text-primary-color);
 }
 
 #score {

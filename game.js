@@ -19,7 +19,7 @@ pipeSouth.src = "images/pipeSouth_mobile.png";
 
 
 var gapBetweenPipes = 70;
-var pipeSpeed = 1;
+var pipeSpeed = 1.5;
 var constant;
 
 var Bird = {
@@ -52,7 +52,9 @@ var jumpForce = 16;
 var score = 0;
 
 document.addEventListener('click', Jump);
-
+document.addEventListener('keyup', event => {
+    if (event.code === 'Space') {Jump}
+  })
 function Jump() {
     gravity = 0;
     setTimeout(() => { gravity = 2 }, 25)
@@ -101,7 +103,7 @@ function Update() {
             window.location.reload();
         }
 
-        if (pipe[i].x == 15) {
+        if (13 <= pipe[i].x && pipe[i].x <= 15) {
             score++;
             scoreText.innerText = "Score: " + score.toString();
             if (score > highscore) {
